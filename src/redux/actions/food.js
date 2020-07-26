@@ -60,7 +60,7 @@ export const fetchFood = (lookup) => {
 export const fetchServing = (obj) => {
   return (dispatch) => {
     return fetch(
-      `https://api.edamam.com/api/food-database/v2/nutrients?app_id=${process.env.EDAMAM_APP_ID}&app_key=${process.env.EDAMAM_APP_KEY}`,
+      `https://api.edamam.com/api/food-database/v2/nutrients?app_id=${process.env.REACT_APP_EDAMAM_APP_ID}&app_key=${process.env.REACT_APP_EDAMAM_APP_KEY}`,
       {
         method: "POST",
         headers: {
