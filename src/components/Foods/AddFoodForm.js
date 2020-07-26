@@ -39,16 +39,20 @@ class AddFoodForm extends Component {
             <option value="dinner">Dinner</option>
             <option value="snack">Snack</option>
           </select>
-          <SingleDatePicker
-            date={this.state.date}
-            onDateChange={this.onDateChange}
-            focused={this.state.calendarFocused}
-            onFocusChange={this.onFocusChange}
-            numberOfMonths={1}
-            isOutsideRange={() => false}
-            id="caloriEat-addFood-form"
-          />
-          <button type="submit">Add Food</button>
+          <div>
+            <SingleDatePicker
+              date={this.state.date}
+              onDateChange={this.onDateChange}
+              focused={this.state.calendarFocused}
+              onFocusChange={this.onFocusChange}
+              numberOfMonths={1}
+              isOutsideRange={() => false}
+              id="caloriEat-addFood-form"
+            />
+          </div>
+          <button style={{ marginTop: "2rem" }} type="submit">
+            Add Food
+          </button>
         </form>
       </div>
     );
