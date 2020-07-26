@@ -6,8 +6,6 @@
 
 ### Running the repo
 
-(You will need to enable a CORS browser extension to hit the edaman api)
-
 ```
 npm i
 
