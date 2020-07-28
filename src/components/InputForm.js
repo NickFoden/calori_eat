@@ -1,42 +1,17 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { fetchFood } from "../redux/actions/food";
+import React from "react";
 
-class InputForm extends Component {
-  state = {
-    foodItem: "",
-  };
+const InputForm = ({ foodItem, handleSearch, handleChange }) => (
+  <form>
+    <input
+      type="text"
+      placeholder="enter food item here"
+      value={foodItem}
+      onChange={handleChange}
+    ></input>
+    <button type="submit" onClick={handleSearch}>
+      Find Food
+    </button>
+  </form>
+);
 
-  onChange = (e) => {
-    this.setState({ foodItem: e.target.value });
-  };
-
-  onSubmit = (e) => {
-    e.preventDefault();
-    const lookup = this.state.foodItem.split(" ").join("%20");
-    this.props.fetchFood(lookup);
-    this.setState({ foodItem: "" });
-  };
-
-  render() {
-    return (
-      <form onSubmit={this.onSubmit}>
-        <input
-          type="text"
-          placeholder="enter food item here"
-          value={this.state.foodItem}
-          onChange={this.onChange}
-        ></input>
-        <button type="submit">Find Food</button>
-      </form>
-    );
-  }
-}
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    fetchFood: (lookup) => dispatch(fetchFood(lookup)),
-  };
-};
-
-export default connect(undefined, mapDispatchToProps)(InputForm);
+export default InputForm;

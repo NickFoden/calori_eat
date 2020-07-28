@@ -20,10 +20,12 @@ class AddFoodForm extends Component {
   onSubmit = (e) => {
     e.preventDefault();
     const food = {
+      ...this.props.food,
       date: this.state.date,
       mealCategory: this.state.mealCategory,
     };
     this.props.addFoodToMeal(food);
+    this.props.addToLocalAddedList(food);
   };
 
   onFocusChange = ({ focused }) => this.setState({ calendarFocused: focused });

@@ -1,18 +1,13 @@
 import React from "react";
-import { connect } from "react-redux";
 
-const AddedList = ({ meals = [] }) => (
-  <div>
-    {meals.map((meal) => (
+const AddedList = ({ addeditems = [] }) => (
+  <ul>
+    {addeditems.map((meal) => (
       <li
-        key={meal.uuid}
+        key={meal.foodId}
       >{`${meal.foodItem} added, calories:${meal.calories}`}</li>
     ))}
-  </div>
+  </ul>
 );
 
-const mapStateToProps = (state) => ({
-  meals: state.meals,
-});
-
-export default connect(mapStateToProps)(AddedList);
+export default AddedList;

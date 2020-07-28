@@ -26,7 +26,7 @@ class DisplayFood extends Component {
         <img alt={foodItem} src={image}></img>
         <div>
           <ServingForm />
-          <AddFoodForm />
+          <AddFoodForm addToLocalAddedList={this.props.addToLocalAddedList} />
         </div>
       </div>
     );
